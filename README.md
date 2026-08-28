@@ -48,10 +48,15 @@ Drop any `.mp3` files into `sounds/` and rebuild. They get picked up automatical
 ## Project layout
 
 ```
-ducky.py              app logic
-setup.py              py2app bundle config
-duck.png / duck.icns  app icon
-quack.wav             normal quack (converted from source MP3)
-quack_chatter.wav     fast chattery quack (1.6× speed, +15% pitch)
-sounds/               bonus MP3s for high-streak petting
+ducky.py                    app logic
+setup.py                    py2app bundle config
+Makefile                    one-command setup, build, and run
+assets/
+  duck.png                  runtime dock icon
+  duck.icns                 build-time app bundle icon
+  sounds/
+    quack.wav               normal quack
+    quack_chatter.wav       fast chattery quack (1.6× speed, +15% pitch)
+    *.mp3                   bonus sounds for high-streak petting
+  screenshots/              README images
 ```
