@@ -5,7 +5,6 @@
 	.venv/bin/pip install -q \
 		pyobjc-framework-Cocoa \
 		pyobjc-framework-Quartz \
-		pyobjc-framework-ServiceManagement \
 		py2app
 
 build: .venv

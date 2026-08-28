@@ -23,8 +23,7 @@ OPTIONS = {
         "AppKit",
         "Foundation",
         "Quartz",
-        "ServiceManagement",
-        "UserNotifications",
+"UserNotifications",
     ],
     "resources": ["assets"],
 }

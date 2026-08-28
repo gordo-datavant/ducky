@@ -16,7 +16,6 @@ A tiny native macOS rubber duck debugger that lives in your Dock.
 - **Gets lonely** — after 10 minutes of neglect the Dock icon fades to blue-grey
 - **Perks back up** — click a lonely duck and it chatters excitedly and flashes vivid yellow for 3 seconds
 - **Silent Mode** — right-click the Dock icon to toggle all sounds and notifications off
-- **Launch at Login** — right-click the Dock icon to toggle starting automatically on login
 
 ## Requirements
 

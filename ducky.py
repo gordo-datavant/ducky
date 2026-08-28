@@ -185,14 +185,6 @@ class AppDelegate(NSObject):
         item.setTarget_(self)
         menu.addItem_(item)
 
-        login_on = self._login_item_enabled()
-        title    = "Launch at Login ✓" if login_on else "Launch at Login"
-        item     = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(
-            title, "toggleLoginItem:", ""
-        )
-        item.setTarget_(self)
-        menu.addItem_(item)
-
         return menu
 
     # -- Timer selectors ------------------------------------------------------
@@ -227,18 +219,6 @@ class AppDelegate(NSObject):
 
     def toggleSilent_(self, sender):
         self._silent   = not self._silent
-        self._last_tap = time.time()
-
-    def toggleLoginItem_(self, sender):
-        try:
-            from ServiceManagement import SMAppService
-            service = SMAppService.mainAppService()
-            if service.status() == 1:  # SMAppServiceStatusEnabled
-                service.unregisterAndReturnError_(None)
-            else:
-                service.registerAndReturnError_(None)
-        except Exception:
-            pass
         self._last_tap = time.time()
 
     # -- Internal helpers -----------------------------------------------------
@@ -287,14 +267,6 @@ class AppDelegate(NSObject):
         self._pool_idx = (self._pool_idx + 1) % len(pool)
         snd.stop()
         snd.play()
-
-    @objc.python_method
-    def _login_item_enabled(self) -> bool:
-        try:
-            from ServiceManagement import SMAppService
-            return SMAppService.mainAppService().status() == 1
-        except Exception:
-            return False
 
     @objc.python_method
     def _set_mood(self, mood: DuckMood):
