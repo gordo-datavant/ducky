@@ -16,20 +16,28 @@ A tiny native macOS rubber duck debugger that lives in your Dock.
 - **Gets lonely** — after 10 minutes of neglect the Dock icon fades to blue-grey
 - **Perks back up** — click a lonely duck and it chatters excitedly and flashes vivid yellow for 3 seconds
 - **Silent Mode** — right-click the Dock icon to toggle all sounds and notifications off
+- **Launch at Login** — right-click the Dock icon to toggle starting automatically on login
 
 ## Requirements
 
 - macOS 12+
-- Python 3.11+ with a venv
+- Python 3.11+
 
-## Build
+## Build & run
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install pyobjc-framework-Cocoa pyobjc-framework-Quartz py2app
-python setup.py py2app
-open dist/Ducky.app
+make
 ```
+
+That's it. On first run it creates a `.venv`, installs dependencies, builds the app bundle, and opens it. Subsequent `make` calls skip the venv step if it already exists.
+
+Other targets:
+
+| Command | Effect |
+|---------|--------|
+| `make build` | Build `dist/Ducky.app` only |
+| `make run` | Build (if needed) and open |
+| `make clean` | Delete `build/`, `dist/`, `.venv/` |
 
 On first launch macOS will ask for notification permission — grant it, or go to **System Settings → Notifications → Ducky** and enable Alerts.
 
