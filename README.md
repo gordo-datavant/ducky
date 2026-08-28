@@ -2,6 +2,12 @@
 
 A tiny native macOS rubber duck debugger that lives in your Dock.
 
+![Ducky in the Dock](assets/screenshots/dock-full.png)
+
+| Happy | Lonely |
+|-------|--------|
+| ![Happy duck close-up](assets/screenshots/dock-closeup.png) | ![Lonely blue duck](assets/screenshots/lonely.png) |
+
 ## What it does
 
 - **Quacks on its own** — random notifications every 5–15 minutes to remind you it exists
