@@ -40,6 +40,8 @@ Other targets:
 
 On first launch macOS will ask for notification permission — grant it, or go to **System Settings → Notifications → Ducky** and enable Alerts.
 
+To keep Ducky around permanently, right-click its Dock icon while it's running and choose **Keep in Dock** and **Open at Login** — both are built into macOS.
+
 ## Adding more bonus sounds
 
 Drop any `.mp3` files into `sounds/` and rebuild. They get picked up automatically and play randomly when your pat streak hits 5+.
